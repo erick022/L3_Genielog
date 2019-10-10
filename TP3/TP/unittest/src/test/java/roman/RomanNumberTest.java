@@ -85,6 +85,7 @@ public class RomanNumberTest {
   }
 
 /*=-=-=-=-=-=-= MES TEST =-=-=-=-=-=-=*/
+	/*INT*/
   @Test(expected = IllegalArgumentException.class)
 	public void ValNegative() trows Exception {
 		RomanNumber.toRoman(-1);
@@ -94,5 +95,15 @@ public class RomanNumberTest {
   public void ValDecimal() trows Exception {
     RomainNumber.toRoman(0.1);
 	}
+	
+	/*STRING*/
+  @Test(expected = IllegalArgumentException.class)
+	public void ValNegative() trows Exception {
+		RomanNumber.fromRoman("IIIIIII");
+	}
 
+  @Test(expected = IllegalArgumentException.class)
+  public void ValDecimal() trows Exception {
+    RomainNumber.fromRoman("III.IIII");
+	}
 }
